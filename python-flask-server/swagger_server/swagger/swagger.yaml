@@ -105,12 +105,10 @@ definitions:
       grades:
         type: "object"
         additionalProperties:
-          $ref: "#/definitions/Grade"
+          type: "string"
     example:
       student_id: 0
       last_name: "last_name"
       grades:
-        key: {}
+        key: "grades"
       first_name: "first_name"
-  Grade:
-    type: "integer"

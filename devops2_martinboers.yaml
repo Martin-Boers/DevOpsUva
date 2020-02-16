@@ -104,8 +104,5 @@ definitions:
     grades:
      type: object
      additionalProperties:
-      $ref: '#/definitions/Grade'
-
- Grade:
-  type: integer
+      type: string
       
