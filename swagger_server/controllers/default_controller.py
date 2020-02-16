@@ -18,6 +18,8 @@ def add_student(body):  # noqa: E501
     """
     if connexion.request.is_json:
         body = Student.from_dict(connexion.request.get_json())  # noqa: E501
+        if not body or not body.last_name or not body.first_name:
+            return 'Invalid input', 405
     return student_service.add_student(body)
 
 
