@@ -16,7 +16,7 @@ student_db = TinyDB(db_file_path)
 
 
 def add_student(student):
-    # First commit of this branch, will work on the add_student function.
+    # First commit of this branch, will work on the add_student function
     queries = []
     query = Query()
     queries.append(query.first_name == student.first_name)
