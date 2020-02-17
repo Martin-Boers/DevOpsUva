@@ -29,8 +29,8 @@ script:
 - node_modules/.bin/newman run tests/postman_collection.json -e tests/postman_environment.json
 after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
-- docker tag marbytes/devops-martin-boers/swagger_server marbytes/devops-martin-boers/swagger_server
-- docker push marbytes/devops-martin-boers/swagger_server
+- docker tag marbytes/devops-martin-boers marbytes/devops-martin-boers
+- docker push marbytes/devops-martin-boers
 env:
   global:
   - secure: MsYD7FZU08f0s6Uul1tgpaOnGIGce/Tzhmm4y/9jqNE3U5nh2vTnHzz/3WOekDeZIB8fypsrq21mhfoC0bCGd0wVLnRVoVhZh2EFPCKHgBTW6HYuFTHCps4TxKqJzrxa85PrbXKA8bzVcRilf8b8qr2RY2c1AFz9L+TfovuYJJopLp0igrCQovigq1fphxdYJB0cDdnlc3Oo3rWXqm6sDh8wHc1s04NlWDTGmOOyM3v1acIn0hiTGnIaepmKUsEte5zF0MroEqt2h1PXC2Did0dJ/nxRQCOeHjHotXc5L/IU0kvZ9cOg9Cy1OadxY2bfVvUjTp7/7b8KeWM5okW98W56C8zOzhAYVMqyM7ClpKVvgeY/MDkwOazl/hiBocX8FVjhYWZ4F5CasqoIOyRd8OTsAOaxQ9nqDmMsJ+QnPLp5kPd1vwhGVhWWiZPkb836VuLsGelDR51GCynTopYvQOBkbluTp9fndAp9kRm1/MU+PTGk18GJy4PL6+vQK+aOJ3zDgUQBF+c2Mo+NV1eyg837ZfkwMunT+LCJNAefI0MJnGOh+unltia4ny5IzljfYOuFxbUm+fWrRPvIugB6+kSIppWrHy7g5dQ4WsABwS9EuGneNeZ3phutC3t+U6BXQxYwrrWOm8wlWB73VUqxvE5k4RlxUeBfxr3QFjJDIjg=
