@@ -89,6 +89,30 @@ paths:
        description: "Invalid ID supplied"
       404:
        description: "Student not found"
+       
+  /student/:
+    get:
+      summary: "Find student by Last Name"
+      description: "Returns a single student (Assumes unique names!)"
+      operationId: "getStudentByLastName"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "last_name"
+        in: "query"
+        description: "Last name of the student to return"
+        required: true
+        type: string
+      responses:
+        200:
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/Student"
+        400:
+          description: "Invalid Last Name supplied"
+        404:
+          description: "Student not found"
 
 definitions:
  Student:

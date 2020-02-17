@@ -48,3 +48,17 @@ def delete_student(student_id):
         return student
     student_db.remove(doc_ids=[int(student_id)])
     return student_id
+
+    
+def get_student_by_last_name(last_name):
+    query = Query()
+    students = student_db.search(query.last_name == last_name)
+    if not students:
+        return None
+    student = students[0]
+    if not student:
+        return student
+    student = Student.from_dict(student)
+    return student
+    
+    

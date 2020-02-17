@@ -91,6 +91,30 @@ paths:
         "404":
           description: "Student not found"
       x-swagger-router-controller: "swagger_server.controllers.default_controller"
+  /student/:
+    get:
+      summary: "Find student by Last Name"
+      description: "Returns a single student (Assumes unique names!)"
+      operationId: "get_student_by_last_name"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "last_name"
+        in: "query"
+        description: "Last name of the student to return"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/Student"
+        "400":
+          description: "Invalid Last Name supplied"
+        "404":
+          description: "Student not found"
+      x-swagger-router-controller: "swagger_server.controllers.default_controller"
 definitions:
   Student:
     type: "object"
