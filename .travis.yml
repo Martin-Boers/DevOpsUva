@@ -29,6 +29,7 @@ script:
 - node_modules/.bin/newman run tests/postman_collection.json -e tests/postman_environment.json
 after_success:
 - docker login -u $DOCKER_USER -p $DOCKER_PASS
+- docker build -t marbytes/devops-martin-boers .
 - docker tag marbytes/devops-martin-boers marbytes/devops-martin-boers
 - docker push marbytes/devops-martin-boers
 env:
